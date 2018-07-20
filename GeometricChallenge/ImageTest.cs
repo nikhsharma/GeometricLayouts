@@ -24,5 +24,6 @@ namespace GeometricChallenge
         public void TestHasListOfTriangles() {
             Assert.AreEqual(0, image.TriangleCount());
         }
+
     }
 }

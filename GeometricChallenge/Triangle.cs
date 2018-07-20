@@ -1,11 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
+
+
 namespace GeometricChallenge
 {
     public class Triangle
     {
-        int[] coords;
+        private List<List<int>> coords;
+        private string id;
 
-        public int[] Coords 
+        public List<List<int>> Coords 
         {
             get
             {
@@ -13,12 +17,23 @@ namespace GeometricChallenge
             }
         }
 
-        public Triangle(int c1, int c2, int c3)
+        public string Id
         {
-            this.coords = new int[3];
-            this.coords[0] = c1;
-            this.coords[1] = c2;
-            this.coords[2] = c3;
+            get
+            {
+                return this.id;
+            }
         }
+
+        public Triangle(List<int> c1, List<int> c2, List<int> c3)
+        {
+            this.coords = new List<List<int>>();
+            this.coords.Add(c1);
+            this.coords.Add(c2);
+            this.coords.Add(c3);
+
+            this.id = "";
+        }
+
     }
 }
