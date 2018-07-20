@@ -25,14 +25,14 @@ namespace GeometricChallenge
             }
         }
 
-        public Triangle(List<int> c1, List<int> c2, List<int> c3)
+        public Triangle(String id, List<int> c1, List<int> c2, List<int> c3)
         {
             this.coords = new List<List<int>>();
             this.coords.Add(c1);
             this.coords.Add(c2);
             this.coords.Add(c3);
 
-            this.id = "";
+            this.id = id;
         }
 
     }
