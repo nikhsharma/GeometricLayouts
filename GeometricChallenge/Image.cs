@@ -48,20 +48,13 @@ namespace GeometricChallenge
 
             while (y <= 50)
             {
-                
                 string row = this.GenerateRow(y);
 
-
                 this.CreateAndAddTriangle(1, row + column, x, y);
-
                 column++;
-
 
                 this.CreateAndAddTriangle(2, row + column, x, y);
-               
-
                 column++;
-
 
                 if (x == 50)
                 {
