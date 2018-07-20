@@ -49,48 +49,16 @@ namespace GeometricChallenge
             while (y <= 50)
             {
                 
-                // Generate row
-                string row = "";
-                switch (y)
-                {
-                    case 0:
-                        row = "A";
-                        break;
-                    case 10:
-                        row = "B";
-                        break;
-                    case 20:
-                        row = "C";
-                        break;
-                    case 30:
-                        row = "D";
-                        break;
-                    case 40:
-                        row = "E";
-                        break;
-                    case 50:
-                        row = "F";
-                        break;
-                }
+                string row = this.GenerateRow(y);
 
 
-                List<int> t1c1 = new List<int>() { x, y };
-                List<int> t1c2 = new List<int>() { x + 10, y + 10 };
-                List<int> t1c3 = new List<int>() { x, y + 10 };
-
-                Triangle t1 = new Triangle(row + column, t1c1, t1c2, t1c3);
-                this.triangles.Add(t1);
+                this.CreateAndAddTriangle(1, row + column, x, y);
 
                 column++;
 
 
-
-                List<int> t2c1 = new List<int>() { x, y };
-                List<int> t2c2 = new List<int>() { x + 10, y };
-                List<int> t2c3 = new List<int>() { x + 10, y + 10 };
-
-                Triangle t2 = new Triangle(row + column, t2c1, t2c2, t2c3);
-                this.triangles.Add(t2);
+                this.CreateAndAddTriangle(2, row + column, x, y);
+               
 
                 column++;
 
@@ -106,6 +74,57 @@ namespace GeometricChallenge
                     x += 10;
                 }
 
+            }
+        }
+
+        private string GenerateRow(int y)
+        {
+            string row = "";
+            switch (y)
+            {
+                case 0:
+                    row = "A";
+                    break;
+                case 10:
+                    row = "B";
+                    break;
+                case 20:
+                    row = "C";
+                    break;
+                case 30:
+                    row = "D";
+                    break;
+                case 40:
+                    row = "E";
+                    break;
+                case 50:
+                    row = "F";
+                    break;
+            }
+
+            return row;
+        }
+
+        private void CreateAndAddTriangle(int triangle, string id, int x, int y)
+        {
+            switch (triangle)
+            {
+                case 1:
+                    List<int> t1c1 = new List<int>() { x, y };
+                    List<int> t1c2 = new List<int>() { x + 10, y + 10 };
+                    List<int> t1c3 = new List<int>() { x, y + 10 };
+
+                    Triangle t1 = new Triangle(id, t1c1, t1c2, t1c3);
+                    this.triangles.Add(t1);
+                    break;
+                case 2:
+                    List<int> t2c1 = new List<int>() { x, y };
+                    List<int> t2c2 = new List<int>() { x + 10, y };
+                    List<int> t2c3 = new List<int>() { x + 10, y + 10 };
+
+                    Triangle t2 = new Triangle(id, t2c1, t2c2, t2c3);
+                    this.triangles.Add(t2);
+                    break;                    
             }
         }
     }
