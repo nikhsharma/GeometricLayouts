@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace GeometricChallenge
 {
     public class Image
     {
-        int[] resolution;
+        private int[] resolution;
+        private List<Triangle> triangles;
 
         public int[] Resolution
         {
@@ -19,6 +21,12 @@ namespace GeometricChallenge
             this.resolution = new int[2];
             this.resolution[0] = lng;
             this.resolution[1] = wdth;
+
+            this.triangles = new List<Triangle>();
+        }
+
+        public int TriangleCount() {
+            return this.triangles.Count;
         }
     }
 }
