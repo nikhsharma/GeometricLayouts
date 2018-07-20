@@ -19,7 +19,7 @@ namespace GeometricChallenge
             c1 = new List<int>(){ 0, 0 };
             c2 = new List<int>() { 10, 10 };
             c3 = new List<int>() { 0, 10 };
-            triangle = new Triangle(c1, c2, c3);
+            triangle = new Triangle("A0", c1, c2, c3);
         }
 
         [Test]

@@ -11,7 +11,7 @@ namespace GeometricChallenge
 
         [SetUp]
         public void Init() {
-            image = new Image(60, 60);
+            image = new Image();
         }
 
         [Test]
@@ -23,6 +23,25 @@ namespace GeometricChallenge
         [Test]
         public void TestHasListOfTriangles() {
             Assert.AreEqual(0, image.TriangleCount());
+        }
+
+        [Test]
+        public void TestCanGenerateTriangles() {
+            image.GenerateTriangles();
+            Assert.AreEqual(72, image.TriangleCount());
+        }
+
+        [Test]
+        public void TestGeneratedTrianglesHaveCorrectId()
+        {
+            image.GenerateTriangles();
+            Assert.AreEqual("A1", image.Triangles[0].Id);
+            Assert.AreEqual("A2", image.Triangles[1].Id);
+            Assert.AreEqual("A3", image.Triangles[2].Id);
+            Assert.AreEqual("A4", image.Triangles[3].Id);
+            Assert.AreEqual("A12", image.Triangles[11].Id);
+            Assert.AreEqual("B1", image.Triangles[12].Id);
+            Assert.AreEqual("F12", image.Triangles[71].Id);
         }
 
     }
