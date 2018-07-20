@@ -31,6 +31,8 @@ namespace GeometricChallenge
             this.resolution[1] = 60;
 
             this.triangles = new List<Triangle>();
+
+            this.GenerateTriangles();
         }
 
         public int TriangleCount()
@@ -38,7 +40,7 @@ namespace GeometricChallenge
             return this.triangles.Count;
         }
 
-        public void GenerateTriangles()
+        private void GenerateTriangles()
         {
             int x = 0;
             int y = 0;

@@ -21,20 +21,13 @@ namespace GeometricChallenge
         }
 
         [Test]
-        public void TestHasListOfTriangles() {
-            Assert.AreEqual(0, image.TriangleCount());
-        }
-
-        [Test]
         public void TestCanGenerateTriangles() {
-            image.GenerateTriangles();
             Assert.AreEqual(72, image.TriangleCount());
         }
 
         [Test]
         public void TestGeneratedTrianglesHaveCorrectId()
         {
-            image.GenerateTriangles();
             Assert.AreEqual("A1", image.Triangles[0].Id);
             Assert.AreEqual("A2", image.Triangles[1].Id);
             Assert.AreEqual("A3", image.Triangles[2].Id);
