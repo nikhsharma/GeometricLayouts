@@ -37,5 +37,12 @@ namespace GeometricChallenge
             Assert.AreEqual("F12", image.Triangles[71].Id);
         }
 
+        [Test]
+        public void TestCanSelectTriangleFromColumnAndRow()
+        {
+            Assert.AreEqual(image.Triangles[11].Coords, image.GetCoords("A", 12));
+            Assert.AreEqual(image.Triangles[57].Coords, image.GetCoords("E", 10));
+        }
+
     }
 }

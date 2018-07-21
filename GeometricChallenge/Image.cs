@@ -120,6 +120,19 @@ namespace GeometricChallenge
                     break;                    
             }
         }
+
+        public List<List<int>> GetCoords(string row, int column)
+        {
+            string id = row + column;
+            foreach (Triangle triangle in this.triangles)
+            {
+                if (triangle.Id == id)
+                {
+                    return triangle.Coords;
+                }
+            }
+            return null;
+        }
     }
 }
 
