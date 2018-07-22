@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace GeometricChallenge
 {
@@ -129,6 +130,18 @@ namespace GeometricChallenge
                 if (triangle.Id == id)
                 {
                     return triangle.Coords;
+                }
+            }
+            return null;
+        }
+
+        public string GetId(List<int> c1, List<int> c2, List<int> c3)
+        {
+            foreach (Triangle triangle in this.triangles)
+            {
+                if (triangle.Coords[0].SequenceEqual(c1) && triangle.Coords[1].SequenceEqual(c2) && triangle.Coords[2].SequenceEqual(c3))
+                {
+                    return triangle.Id;
                 }
             }
             return null;

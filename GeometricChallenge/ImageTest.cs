@@ -1,5 +1,6 @@
 ﻿using System;
 using NUnit.Framework;
+using System.Collections.Generic;
 
 namespace GeometricChallenge
 {
@@ -44,5 +45,13 @@ namespace GeometricChallenge
             Assert.AreEqual(image.Triangles[57].Coords, image.GetCoords("E", 10));
         }
 
+        [Test]
+        public void TestCanSelectTriangleFromCoords()
+        {
+            List<int> c1 = new List<int>() { 10, 10 };
+            List<int> c2 = new List<int>() { 20, 20 };
+            List<int> c3 = new List<int>() { 10, 20 };
+            Assert.AreEqual(image.Triangles[14].Id, image.GetId(c1, c2, c3));
+        }
     }
 }
