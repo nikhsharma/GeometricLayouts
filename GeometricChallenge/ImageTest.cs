@@ -12,7 +12,7 @@ namespace GeometricChallenge
 
         [SetUp]
         public void Init() {
-            image = new Image();
+            image = new Image(60, 60);
         }
 
         [Test]
